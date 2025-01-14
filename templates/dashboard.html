@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Dashboard ({{ role }}: {{ username }})</h2>
+<p>Welcome, {{ username }}!</p>
+<nav>
+    <a href="{{ url_for('profile', token=token) }}">Profile</a> |
+    {% if role == 'superadmin' %}
+    <a href="{{ url_for('log_data', token=token) }}">Log Data</a>
+    {% endif %}
+</nav>
+<a href="{{ url_for('logout') }}">Logout</a>
+{% endblock %}

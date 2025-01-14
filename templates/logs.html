@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Log Data ({{ role }}: {{ username }})</h2>
+<table>
+    <tr>
+        <th>UUID</th>
+        <th>Key</th>
+        <th>Text</th>
+        <th>Session</th>
+        <th>IP</th>
+        <th>App</th>
+        <th>Time</th>
+    </tr>
+    {% for log in logs %}
+    <tr>
+        <td>{{ log['uuid'] }}</td>
+        <td>{{ log['key'] }}</td>
+        <td>{{ log['txt'] }}</td>
+        <td>{{ log['session'] }}</td>
+        <td>{{ log['ip'] }}</td>
+        <td>{{ log['app'] }}</td>
+        <td>{{ log['time'] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
